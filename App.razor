@@ -2,15 +2,40 @@
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
             <Authorizing>
-                <p>Determining session state, please wait...</p>
+                <div class="container">
+                    <div class="row m-auto" style="height: 100vh;">
+                        <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+                            <div class="spinner-border" role="status">
+                            </div>
+                            <p class="lead">Determining session state</p>
+                            <span class="sr-only">Determining session state</span>
+                        </div>
+                    </div>
+                </div>
             </Authorizing>
             <NotAuthorized>
-                <h1>Sorry</h1>
-                <p>You are not authorized to access this page. Please log in and re-try.</p>
+                <div class="container">
+                    <div class="row m-auto" style="height: 100vh;">
+                        <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+                            <h2 class="display-4 text-danger">Error</h2>
+                            <p class="lead">You are not authorized to access this page; please log in and re-try.</p>
+                        </div>
+                    </div>
+                </div>
             </NotAuthorized>
         </AuthorizeRouteView>
     </Found>
     <NotFound>
-        <p>Sorry, there's nothing at this address.</p>      
+        <div class="container">
+            <div class="row m-auto" style="height: 100vh;">
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+                    <h2 class="display-4 text-danger">404</h2>
+                    <p class="lead">Sorry, there's nothing at this address.</p>
+                    <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                        Return Home
+                    </NavLink>
+                </div>
+            </div>
+        </div>
     </NotFound>
 </Router>
