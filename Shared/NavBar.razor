@@ -1,0 +1,38 @@
+﻿<nav class="navbar fixed-top border-bottom navbar-expand-lg navbar-light bg-light">
+
+    <NavLink class="navbar-brand" href="" Match="NavLinkMatch.All"><i class="fas fa-yin-yang fa-spin fa-lg"></i></NavLink>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                    Home
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/admin" Match="NavLinkMatch.All">
+                    Admin
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link disabled" href="/technique" Match="NavLinkMatch.All">
+                    Techniques
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link disabled" href="/form" Match="NavLinkMatch.All">
+                    Forms
+                </NavLink>
+            </li>
+        </ul>
+        <form class="my-2 my-lg-0">
+            <div class="nav-item">
+                <AccessControl/>
+            </div>
+        </form>
+    </div>
+</nav>

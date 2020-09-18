@@ -2,24 +2,38 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Minerva</title>
-    <base href="/" />
-    <link href="css/mini-default.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
+    <base href="/"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="css/app.css" rel="stylesheet"/>
+    <link href="css/simple-sidebar.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/031964567d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <app>Loading...</app>
-
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+<app>
+    <div class="container">
+        <div class="row m-auto" style="height: 100vh;">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+                <div class="spinner-border" role="status">
+                </div>
+                <span class="sr-only">Loading</span>
+                <p class="lead">Loading</p>
+            </div>
+        </div>
     </div>
-    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
-    <script src="_framework/blazor.webassembly.js"></script>
+</app>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+<script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+<script src="_framework/blazor.webassembly.js"></script>
 </body>
 
 </html>
