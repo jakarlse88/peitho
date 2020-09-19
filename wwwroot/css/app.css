@@ -1,5 +1,18 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.nav-underline .nav-link {
+    /*padding-top: .75rem;*/
+    /*padding-bottom: .75rem;*/
+    font-size: .875rem;
+    color: #6c757d;
+    display: block;
+    padding: .5rem 1rem;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
