@@ -1,12 +1,12 @@
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Text;
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Peitho.Infrastructure;
 
 namespace Peitho
 {
@@ -19,11 +19,15 @@ namespace Peitho
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            builder.Services.AddOidcAuthentication(opt =>
-            {
-                builder.Configuration.Bind("Auth0", opt.ProviderOptions);
-                opt.ProviderOptions.ResponseType = "code";
-            });
+            builder.Services
+                .AddOidcAuthentication(options =>
+                {
+                    builder.Configuration.Bind("Auth0", options.ProviderOptions);
+
+                    options.ProviderOptions.ResponseType = "code";
+                    options.UserOptions.RoleClaim = "https://schemas.jakarlse.com/roles";
+                })
+                .AddAccountClaimsPrincipalFactory<ArrayClaimsPrincipalFactory<RemoteUserAccount>>();
 
             await builder.Build().RunAsync();
         }
