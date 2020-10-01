@@ -11,7 +11,22 @@
 
     <div class="row">
         <div class="col-12">
-            <p class="lead">@Model?.Name ?? "N/A"</p>
+            @if (Techniques == null)
+            {
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+                    <div class="spinner-border" role="status">
+                    </div>
+                    <span class="sr-only">Loading</span>
+                    <p class="lead">Fetching data</p>
+                </div>
+            }
+            else
+            {
+                @foreach (var model in Techniques)
+                {
+                    <p class="lead">@model.Name</p>
+                }
+            }
         </div>
     </div>
 

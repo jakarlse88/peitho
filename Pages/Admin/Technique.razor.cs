@@ -1,37 +1,30 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Components;
 using Peitho.Models;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Peitho.Services;
 
 namespace Peitho.Pages.Admin
 {
     public partial class Technique
     {
-        [Inject] private IAccessTokenProvider TokenProvider { get; set; }
-        [Inject] private HttpClient Http { get; set; }
-        private TechniqueModel Model { get; set; }
+        [Inject] private IApiRequestService ApiRequestService { get; set; }
+        private IEnumerable<TechniqueModel> Techniques { get; set; }
+
+        protected override void OnAfterRender(bool firstRender)
+        {
+            if (firstRender)
+            {
+                Techniques = new List<TechniqueModel>();
+            }
+        }
 
         protected override async Task OnInitializedAsync()
         {
-            const string techniqueName = "test";
-
-            //using (var requestMessage = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5001/peitho/technique?name={techniqueName}"))
-            using (var requestMessage = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5002/api/technique?name={techniqueName}"))
-            {
-                var tokenResult = await TokenProvider.RequestAccessToken();
-
-                if (tokenResult.TryGetToken(out var token))
-                {
-                    requestMessage.Headers.Authorization =
-                      new AuthenticationHeaderValue("Bearer", token.Value);
-
-                    var response = await Http.SendAsync(requestMessage);
-                    Model = await response.Content.ReadFromJsonAsync<TechniqueModel>();
-                }
-            }
+            const string requestUrl = "http://localhost:5002/api/technique/all";
+            
+            Techniques = 
+                await ApiRequestService.HandleGetRequest<IEnumerable<TechniqueModel>>(requestUrl);
         }
     }
 }
