@@ -10,9 +10,9 @@ namespace Peitho.Pages.Admin
 {
     public partial class Technique
     {
-        [Inject] public IAccessTokenProvider TokenProvider { get; set; }
-        [Inject] public HttpClient Http { get; set; }
-        public TechniqueModel Model { get; set; }
+        [Inject] private IAccessTokenProvider TokenProvider { get; set; }
+        [Inject] private HttpClient Http { get; set; }
+        private TechniqueModel Model { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

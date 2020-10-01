@@ -1,9 +1,81 @@
-<AuthorizeView>
-    <Authorized>
-        <span class="text-muted">Hello, @context.User.Identity.Name!</span>
-        <a href="#" class="nav-item" @onclick="BeginSignOut">Log out</a>
-    </Authorized>
-    <NotAuthorized>
-        <a class="nav-link" href="authentication/login">Log in</a>
-    </NotAuthorized>
-</AuthorizeView>
+<!-- We only display the dropleft identity menu on large screens and up -->
+<div class="d-none d-lg-inline dropdown dropleft">
+
+    <!-- User icon button -->
+    <button class="btn dropdown-toggle" type="button" id="identityDropdownButton" data-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-lg fa-user-circle"></i>
+    </button>
+
+    <!-- Content -->
+    <ul class="dropdown-menu" aria-labelledby="identityDropdownButton">
+
+        <AuthorizeView>
+
+            <!-- User authorized -->
+            <Authorized>
+                <li>
+                    <span class="text-muted disabled dropdown-item">Hello, @context.User.Identity.Name!</span>
+                </li>
+                <li>
+                    <NavLink class="dropdown-item" href="/admin" Match="NavLinkMatch.All">
+                        Control Panel
+                    </NavLink>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a href="#" class="dropdown-item" @onclick="BeginSignOut">Log out</a>
+                </li>
+
+            </Authorized>
+
+            <!-- User not authorized -->
+            <NotAuthorized>
+
+                <li>
+                    <a class="dropdown-item" href="authentication/login">Log in</a>
+                </li>
+
+            </NotAuthorized>
+
+        </AuthorizeView>
+
+    </ul>
+</div>
+
+<div class="d-inline d-lg-none">
+    <ul class="navbar-nav mr-auto">
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <AuthorizeView>
+
+            <!-- User authorized -->
+            <Authorized>
+                <li class="nav-item">
+                    <span class="disabled nav-link">Hello, @context.User.Identity.Name!</span>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/admin" Match="NavLinkMatch.All">
+                        Control Panel
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" @onclick="BeginSignOut">Log out</a>
+                </li>
+
+            </Authorized>
+
+            <!-- User not authorized -->
+            <NotAuthorized>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="authentication/login">Log in</a>
+                </li>
+
+            </NotAuthorized>
+
+        </AuthorizeView>
+    </ul>
+</div>
