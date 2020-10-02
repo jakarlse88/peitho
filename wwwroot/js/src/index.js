@@ -1,4 +1,4 @@
-﻿import {createTable} from "./datatables";
+﻿import { createTable, destroyTable } from "./datatables";
 
 export function CreateDataTable(tableId) {
     if (typeof(tableId) === 'undefined' 
@@ -11,6 +11,15 @@ export function CreateDataTable(tableId) {
     createTable(tableId);
 }
 
-export function DestroyDataTable() {
-    console.log("asad");
-}
+
+// TODO: get rid of this if not needed
+// export function DestroyDataTable(tableId) {
+//     if (typeof(tableId) === 'undefined'
+//         || tableId === null
+//         || tableId.length === 0)
+//     {
+//         throw "Parameter 'tableId' was undefined, null, or empty.";
+//     }
+//    
+//     destroyTable(tableId);
+// }

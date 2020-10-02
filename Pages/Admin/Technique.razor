@@ -4,8 +4,8 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-12">
-            <h3>Technique</h3>
+        <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+            <h3>Technique Overview</h3>
         </div>
     </div>
 
@@ -22,10 +22,33 @@
             }
             else
             {
-                @foreach (var model in Techniques)
-                {
-                    <p class="lead">@model.Name</p>
-                }
+                <table id="@TableId" class="table table-light table-striped table-hover">
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Name (Hangeul)</th>
+                        <th scope="col">Name (Hanja)</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Category</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    @foreach (var technique in Techniques)
+                    {
+                        <tr>
+                            <th scope="row">@technique.Name</th>
+                            <td>@technique.NameHangeul</td>
+                            <td>@technique.NameHanja</td>
+                            <td>@technique.TechniqueType</td>
+                            <td>@technique.TechniqueCategory</td>
+                            <td></td> <!-- TODO: button for read/update/delete actions -->
+                        </tr>
+                    }
+                    </tbody>
+                </table>
             }
         </div>
     </div>
