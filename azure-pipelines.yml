@@ -30,6 +30,23 @@ stages:
         arguments: '--configuration $(BuildConfiguration)'
         testRunTitle: 'Test'
 
+- stage: BundleJS
+  displayName: Process JavaScript (install dependencies and bundle)
+  jobs:
+  - job:
+    displayName: Install dependencies from NPM
+    steps:
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        workingDir: 'wwwroot/js'
+        verbose: true
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        workingDir: 'wwwroot/js'
+        customCommand: 'run build'
+
 - stage: BuildAndPush
   displayName: Build and push image
   jobs:
