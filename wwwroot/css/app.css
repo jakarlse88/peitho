@@ -1,4 +1,29 @@
-﻿.brand-logo {
+﻿#admin-sidebar-toggler {
+    position: absolute;
+    top: 70px;
+    left: 56px;
+}
+
+/* Sidebar icon styles */
+.admin-sidebar-icon {
+    color: grey;
+    transition: transform .5s ease;
+}
+
+.admin-sidebar-icon:hover {
+    cursor: pointer;
+    color: black;
+}
+
+a .active > i {
+    color: black;
+}
+
+.body-padded {
+    padding-top: 56px;
+}
+
+.brand-logo {
     font-family: 'Josefin Sans', sans-serif;
     padding-bottom: 0;
 }
@@ -8,8 +33,6 @@
 }
 
 .nav-underline .nav-link {
-    /*padding-top: .75rem;*/
-    /*padding-bottom: .75rem;*/
     font-size: .875rem;
     color: #6c757d;
     display: block;
