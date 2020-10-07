@@ -1,4 +1,9 @@
-﻿#admin-sidebar-toggler {
+﻿.validation-message {
+    color: red;
+    font-size: .7em;
+}
+
+#admin-sidebar-toggler {
     position: absolute;
     top: 70px;
     left: 56px;
@@ -58,17 +63,17 @@ a .active > i {
     top: 0.5rem;
 }
 
-@media (max-width: 767.98px) {
-    .main .top-row:not(.auth) {
-        display: none;
-    }
+/*@media (max-width: 767.98px) {*/
+/*    .main .top-row:not(.auth) {*/
+/*        display: none;*/
+/*    }*/
 
-    .main .top-row.auth {
-        justify-content: space-between;
-    }
+/*    .main .top-row.auth {*/
+/*        justify-content: space-between;*/
+/*    }*/
 
-    .main .top-row a, .main .top-row .btn-link {
-        margin-left: 0;
-    }
-}
+/*    .main .top-row a, .main .top-row .btn-link {*/
+/*        margin-left: 0;*/
+/*    }*/
+/*}*/
 

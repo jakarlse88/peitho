@@ -6,14 +6,16 @@
 
             <AdminSideBarNavItem Url="/Admin" Text="Dashboard"/>
 
+            <!-- Technique section -->
             <AdminSideBarHeading Text="Technique"/>
-            <div class="d-flex flex-row justify-content-between">
-                <AdminSideBarNavItem Url="/Admin/Technique" Text="Overview"/>
-                <NavLink href="/Admin/Technique/Create" class="align-self-center" Match="NavLinkMatch.All">
-                    <i class="admin-sidebar-icon fas fa-plus fa-md mr-2"></i>
-                </NavLink>
-            </div>
-            <AdminSideBarNavItem Url="/Admin/Technique/Category" Text="Technique Category"/>
+            
+            <!-- Technique -->
+            <AdminSideBarNavItemWithCreateIcon Url="/Admin/Technique" Text="Overview" CreateActionUrl="/Admin/Technique/Create" />
+            
+            <!-- Technique Category -->
+            <AdminSideBarNavItemWithCreateIcon Url="/Admin/Technique/Category" Text="Technique Category" CreateActionUrl="/Admin/Technique/Category/Create" />
+            
+            <!-- Technique Type -->
             <AdminSideBarNavItem Url="/Admin/Technique/Type" Text="Technique Type"/>
 
         </ul>

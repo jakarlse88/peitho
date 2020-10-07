@@ -1,14 +1,14 @@
-﻿@layout AdminLayout
-@page "/Admin/Technique"
+﻿@page "/Admin/Technique/Category"
+@layout AdminLayout
 @using Peitho.Pages.Admin.Shared
 
-<div class="container pt-2">
 
-    <AdminSubHeading Heading="Technique" />
+<div class="container pt-2">
+    <AdminSubHeading Heading="Technique Category"/>
 
     <div class="row">
         <div class="col-12">
-            @if (Techniques == null)
+            @if (Models == null)
             {
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
                     <div class="spinner-border" role="status">
@@ -26,21 +26,17 @@
                         <th scope="col">Name</th>
                         <th scope="col">Name (Hangeul)</th>
                         <th scope="col">Name (Hanja)</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Category</th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    @foreach (var technique in Techniques)
+                    @foreach (var element in Models)
                     {
                         <tr>
-                            <th scope="row">@technique.Name</th>
-                            <td>@technique.NameHangeul</td>
-                            <td>@technique.NameHanja</td>
-                            <td>@technique.TechniqueType</td>
-                            <td>@technique.TechniqueCategory</td>
+                            <th scope="row">@element.Name</th>
+                            <th scope="row">@element.NameHangeul</th>
+                            <th scope="row">@element.NameHanja</th>
                             <td></td> <!-- TODO: button for read/update/delete actions -->
                         </tr>
                     }
@@ -49,5 +45,4 @@
             }
         </div>
     </div>
-
 </div>
