@@ -23,6 +23,11 @@ stages:
   - job: Test
     displayName: Test
     steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '5.x'
+        includePreviewVersions: true
     - task: DotNetCoreCLI@2
       inputs:
         command: 'test'
@@ -33,7 +38,7 @@ stages:
 - stage: BundleJS
   displayName: Process JavaScript (install dependencies and bundle)
   jobs:
-  - job:
+  - job: NPM
     displayName: Install dependencies from NPM
     steps:
     - task: Npm@1

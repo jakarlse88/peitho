@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0.100-rc.2-buster-slim AS build
 WORKDIR /src
 EXPOSE 80
 COPY Peitho.csproj .

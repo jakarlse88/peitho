@@ -14,6 +14,9 @@ namespace Peitho.Pages.Admin.TechniqueCategory
         private IEnumerable<TechniqueCategoryModel> Models { get; set; }
         private const string TableId = "categoryTable";
         
+        // TODO: single TechniqueCategory page
+        // TODO: consider refactoring page .containers to the layout
+        
         /// <summary>
         /// Component initialisation logic.
         /// </summary>
