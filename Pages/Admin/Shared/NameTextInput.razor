@@ -1,0 +1,13 @@
+﻿@inherits CustomInputTextBase
+
+<div class="form-control-wrapper">
+    <label for="@Id">@Label <span class=@(Required ? "text-danger" : "d-none")>*</span></label>
+    <input type="text" id="@Id" @bind="@CurrentValue" placeholder="@Placeholder" class="@CssClass form-control"/>
+    <ValidationMessage For="@ValidationFor" />
+</div>
+
+@code {
+
+    [Parameter] public string Label { get; set; }
+
+}

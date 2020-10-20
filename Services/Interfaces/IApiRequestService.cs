@@ -12,5 +12,14 @@ namespace Peitho.Services
         /// <typeparam name="TEntity"></typeparam>
         /// <returns></returns>
         Task<TEntity> HandleGetRequest<TEntity>(string requestUrl);
+
+        /// <summary>
+        /// Handles a POST request to an external API and attempts to deserialize the
+        /// response to the type <typeparam name="TEntity"></typeparam>.
+        /// </summary>
+        /// <param name="requestUrl"></param>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <returns></returns>
+        Task<TEntity> HandlePostRequest<TEntity>(string requestUrl, TEntity model);
     }
 }

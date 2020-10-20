@@ -1,0 +1,25 @@
+﻿<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+
+    <div class="position-sticky pt-3">
+
+        <ul class="nav flex-column">
+
+            <AdminSideBarNavItem Url="/Admin" Text="Dashboard"/>
+
+            <!-- Technique section -->
+            <AdminSideBarHeading Text="Technique"/>
+            
+            <!-- Technique -->
+            <AdminSideBarNavItemWithCreateIcon Url="/Admin/Technique" Text="Overview" CreateActionUrl="/Admin/Technique/Create" />
+            
+            <!-- Technique Category -->
+            <AdminSideBarNavItemWithCreateIcon Url="/Admin/Technique/Category" Text="Technique Category" CreateActionUrl="/Admin/Technique/Category/Create" />
+            
+            <!-- Technique Type -->
+            <AdminSideBarNavItem Url="/Admin/Technique/Type" Text="Technique Type"/>
+
+        </ul>
+
+    </div>
+
+</nav>

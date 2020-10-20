@@ -1,0 +1,12 @@
+﻿<div class="d-flex flex-row justify-content-between">
+    <AdminSideBarNavItem Url="@Url" Text="@Text" />
+    <NavLink href="@CreateActionUrl" class="align-self-center" Match="NavLinkMatch.All">
+        <i class="admin-sidebar-icon fas fa-plus fa-md mr-2"></i>
+    </NavLink>
+</div>
+
+@code {
+    [Parameter] public string Url { get; set; }
+    [Parameter] public string Text { get; set; }
+    [Parameter] public string CreateActionUrl { get; set; }
+}

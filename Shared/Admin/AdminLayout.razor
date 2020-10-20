@@ -1,15 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-<NavBar/>
-
 <AdminNavBar/>
 
-<div class="main" style="margin-top: 37px;">
+<!-- Sidebar -->
+<AdminSideBar/>
 
-    <div class="content">
-        @Body
+<div class="container-fluid">
+    <div class="row">
+
+        <main class="col-md-9 ml-sm-auto col-lg-10 body-padded">
+
+            <!-- Body -->
+            @Body
+
+        </main>
     </div>
-    
 </div>
-
-<PageFooter />

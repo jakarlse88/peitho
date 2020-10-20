@@ -1,20 +1,26 @@
-﻿<div class="nav-scroller navbar-light bg-light shadow">
-    
-    <nav class="nav nav-underline">
-    
-        <NavLink class="nav-link" href="/Admin" Match="NavLinkMatch.All">
-            Dashboard
+﻿<!-- Admin NavBar -->
+<nav class="navbar fixed-top border-bottom navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container-fluid">
+
+        <!-- Brand Logo -->
+        <NavLink class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/Admin">
+            Prometheus
         </NavLink>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
         
-        <NavLink class="nav-link" href="/Admin/Technique" Match="NavLinkMatch.All">
-            Techniques
-        </NavLink>
+            <form class="my-2 my-lg-0">
+                <div class="nav-item">
+                    <!-- This is here only to prevent weird positioning shenanigans -->
+                </div>
+            </form>
         
-        <NavLink class="nav-link disabled" href="/Admin/Stance" Match="NavLinkMatch.All">Stances</NavLink>
-        
-        <NavLink class="nav-link disabled" href="/Admin/Transition" Match="NavLinkMatch.All">Transitions</NavLink>
-        
-        <NavLink class="nav-link disabled" href="/Admin/Form" Match="NavLinkMatch.All">Forms</NavLink>
-        
-    </nav>
-</div>
+        </div>
+
+    </div>
+</nav>

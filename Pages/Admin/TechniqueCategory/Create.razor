@@ -1,0 +1,74 @@
+﻿@layout AdminLayout
+@page "/Admin/Technique/Category/Create"
+@using Peitho.Pages.Admin.Shared
+@using Peitho.Infrastructure
+
+<div class="container pt-2">
+    <AdminSubHeading Heading="New Technique Category"/>
+
+    <EditForm EditContext="@_editContext" OnValidSubmit="@Submit">
+        <DataAnnotationsValidator/>
+
+        <div class="row d-flex flex-row justify-content-center">
+
+            <!-- Name -->
+            <div class="col-3 mb-3">
+                <NameTextInput
+                    Id="name-input"
+                    Label="Name"
+                    Placeholder="Name"
+                    Required="true"
+                    @bind-Value="@Model.Name"
+                    ValidationFor="@(() => Model.Name)"/>
+            </div>
+
+            <!-- Name (hangeul) -->
+            <div class="col-3 mb-3">
+                <NameTextInput
+                    Id="name-input-hangeul"
+                    Label="Name (hanja)"
+                    Placeholder="Name (hangeul)"
+                    Required="false"
+                    @bind-Value="@Model.NameHangeul"
+                    ValidationFor="@(() => Model.NameHangeul)"/>
+            </div>
+
+            <!-- Name (hanja) -->
+            <div class="col-3 mb-3">
+                <NameTextInput
+                    Id="name-input-hanja"
+                    Label="Name (hanja)"
+                    Placeholder="Name (hanja)"
+                    Required="false"
+                    @bind-Value="@Model.NameHanja"
+                    ValidationFor="@(() => Model.NameHanja)"/>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col d-flex flex-row justify-content-center">
+                
+                <button class="btn btn-success" type="submit" disabled="@(_formIsInvalid || _apiOperationState == ApiOperationState.OperationInProgress)">
+                    Submit
+                    @{
+                        if (_apiOperationState == ApiOperationState.OperationInProgress)
+                        {
+                            <i class="fas fa-spinner fa-spin"></i>
+                        }
+                        else
+                        {
+                            <i class="fas fa-paper-plane"></i>
+                        }
+                    }
+                </button>
+                
+            </div>
+            
+        </div>
+
+
+    </EditForm>
+
+
+</div>

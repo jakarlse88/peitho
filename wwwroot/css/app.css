@@ -1,4 +1,34 @@
-﻿.brand-logo {
+﻿.validation-message {
+    color: red;
+    font-size: .7em;
+}
+
+#admin-sidebar-toggler {
+    position: absolute;
+    top: 70px;
+    left: 56px;
+}
+
+/* Sidebar icon styles */
+.admin-sidebar-icon {
+    color: grey;
+    transition: transform .5s ease;
+}
+
+.admin-sidebar-icon:hover {
+    cursor: pointer;
+    color: black;
+}
+
+a .active > i {
+    color: black;
+}
+
+.body-padded {
+    padding-top: 56px;
+}
+
+.brand-logo {
     font-family: 'Josefin Sans', sans-serif;
     padding-bottom: 0;
 }
@@ -8,8 +38,6 @@
 }
 
 .nav-underline .nav-link {
-    /*padding-top: .75rem;*/
-    /*padding-bottom: .75rem;*/
     font-size: .875rem;
     color: #6c757d;
     display: block;
@@ -35,17 +63,17 @@
     top: 0.5rem;
 }
 
-@media (max-width: 767.98px) {
-    .main .top-row:not(.auth) {
-        display: none;
-    }
+/*@media (max-width: 767.98px) {*/
+/*    .main .top-row:not(.auth) {*/
+/*        display: none;*/
+/*    }*/
 
-    .main .top-row.auth {
-        justify-content: space-between;
-    }
+/*    .main .top-row.auth {*/
+/*        justify-content: space-between;*/
+/*    }*/
 
-    .main .top-row a, .main .top-row .btn-link {
-        margin-left: 0;
-    }
-}
+/*    .main .top-row a, .main .top-row .btn-link {*/
+/*        margin-left: 0;*/
+/*    }*/
+/*}*/
 

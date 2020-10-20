@@ -1,0 +1,48 @@
+﻿@page "/Admin/Technique/Category"
+@layout AdminLayout
+@using Peitho.Pages.Admin.Shared
+
+
+<div class="container pt-2">
+    <AdminSubHeading Heading="Technique Category"/>
+
+    <div class="row">
+        <div class="col-12">
+            @if (Models == null)
+            {
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center mh-100">
+                    <div class="spinner-border" role="status">
+                    </div>
+                    <span class="sr-only">Loading</span>
+                    <p class="lead">Fetching data</p>
+                </div>
+            }
+            else
+            {
+                <table id="@TableId" class="table table-light table-hover">
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Name (Hangeul)</th>
+                        <th scope="col">Name (Hanja)</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    @foreach (var element in Models)
+                    {
+                        <tr>
+                            <th scope="row">@element.Name</th>
+                            <th scope="row">@element.NameHangeul</th>
+                            <th scope="row">@element.NameHanja</th>
+                            <td></td> <!-- TODO: button for read/update/delete actions -->
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
